@@ -1,0 +1,427 @@
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600&display=swap');
+
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.task-manager {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: linear-gradient(135deg, #ffffff, #95dfff);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #2a2a72;
+    font-family: 'Montserrat', sans-serif; /* Trendy font for the title */
+    transition: transform 0.3s, color 0.3s; /* Smooth hover effect */
+}
+
+h1:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+    color: #1e90ff; /* Change color to blue on hover */
+}
+/* Animation Keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Animated Heading Styles */
+.animated-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2a2a72;
+    animation: fadeIn 1.5s ease-out, pulse 2s infinite;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 10px;
+}
+
+/* Motivational Quote Styles */
+.motivational-quote {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #555;
+    font-style: italic;
+    animation: fadeIn 2s ease-out;
+    margin-top: -10px;
+}
+
+
+/* Task Form Styles */
+/* Add Task Button Styling */
+#addTask {
+    background: linear-gradient(90deg, #4a90e2, #50c8fa); /* Gradient from soft blue to bright blue */
+    color: white; /* White text */
+    padding: 10px 20px; /* Padding for a compact look */
+    font-size: 14px; /* Slightly smaller font for distinction */
+    font-weight: bold; /* Bold text */
+    border: none; /* Remove border */
+    border-radius: 6px; /* Slightly rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    box-shadow: 0px 4px 8px rgba(74, 144, 226, 0.4); /* Blue glow */
+    transition: background 0.3s, box-shadow 0.3s, transform 0.3s; /* Smooth hover and active effect */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.6); /* Subtle shine on text */
+}
+
+#addTask:hover {
+    background: linear-gradient(90deg, #50c8fa, #4a90e2); /* Reverse gradient on hover */
+    box-shadow: 0px 6px 12px rgba(74, 144, 226, 0.6); /* Enhanced glow */
+    transform: scale(1.03); /* Slight zoom effect */
+}
+
+#addTask:active {
+    background: linear-gradient(90deg, #3a78c2, #4296d2); /* Darker gradient when clicked */
+    box-shadow: 0px 3px 6px rgba(74, 144, 226, 0.5); /* Dimmer glow */
+    transform: scale(0.95); /* Press effect */
+}
+
+/* Add New Task Button Styling */
+.add-task {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100px; /* Adjust the height of the container if needed */
+    margin-top: 20px; /* Add some spacing from the task board */
+}
+
+#showForm {
+    background: linear-gradient(90deg, #1e90ff, #87cefa); /* Gradient from blue to light blue */
+    color: white; /* White text */
+    padding: 12px 24px; /* Padding for size */
+    font-size: 16px; /* Font size for better readability */
+    font-weight: bold; /* Bold text */
+    border: none; /* Remove border */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    box-shadow: 0px 4px 10px rgba(30, 144, 255, 0.4); /* Blue glow */
+    transition: background 0.4s, box-shadow 0.4s, transform 0.3s; /* Smooth hover effect */
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.7); /* Subtle shiny effect on text */
+}
+
+#showForm:hover {
+    background: linear-gradient(90deg, #87cefa, #1e90ff); /* Reverse gradient on hover */
+    box-shadow: 0px 6px 14px rgba(30, 144, 255, 0.7); /* Brighter glow */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+#showForm:active {
+    background: linear-gradient(90deg, #4682b4, #5f9ea0); /* Darker gradient when clicked */
+    box-shadow: 0px 3px 8px rgba(30, 144, 255, 0.5); /* Dimmer glow */
+    transform: scale(0.97); /* Slight press effect */
+}
+
+/* Form Container */
+.form-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three equal columns */
+    gap: 20px; /* Space between grid items */
+    margin: 20px auto; /* Center the form container */
+    max-width: 800px; /* Limit the form width */
+    padding: 20px; /* Add some padding inside the form */
+    background-color: #f9f9f9; /* Light background for contrast */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.form-container.hidden {
+    display: none;
+}
+
+.form-container input,
+.form-container select,
+.form-container textarea {
+    width: 48%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    background: #ffffff;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.form-container textarea {
+    height: 100px;
+    resize: none;
+}
+
+.form-container button {
+    width: 100%; /* Make inputs and buttons fill their grid cell */
+    padding: 10px; /* Padding for inputs */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 6px; /* Rounded corners for inputs */
+    font-size: 14px; /* Adjust font size */
+}
+
+.form-container button {
+    background: linear-gradient(90deg, #1e90ff, #87cefa); /* Gradient for buttons */
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background 0.4s, transform 0.3s; /* Smooth hover effect */
+}
+
+.form-container button:hover {
+    background: linear-gradient(90deg, #87cefa, #1e90ff); /* Gradient reversal on hover */
+    transform: scale(1.05); /* Slight enlargement */
+}
+
+/* Task Board Styles */
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Column Background Color with Pastel Theme */
+.column {
+    background: #90a6d6; /* Very light gray for a soft backdrop */
+    border: 1px solid #e5e5e5; /* Subtle border */
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.column:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Light shadow effect */
+}
+
+.column h2 {
+    color: #0c0a41; /* Soft purple color for titles */
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+/* Container for task list */
+.tasks {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between tasks */
+}
+
+/* Task Title (if any) */
+.task h3 {
+    color: #7f4b8b; /* Soft purple color for task titles */
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Task Output Box Styling */
+.task {
+    background: linear-gradient(135deg, #ffffff, #8bb0fb); /* Soft pastel purple to pastel pink gradient */
+    border: 1px solid #f0c4e0; /* Light pastel pink border */
+    border-radius: 12px; /* Rounded corners for softness */
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    cursor: grab;
+    transition: transform 0.2s, box-shadow 0.2s ease-in-out;
+}
+
+.task:active {
+    transform: scale(1.02);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Slight enlargement and shadow effect when clicked */
+}
+
+/* Optional hover effect for task box */
+.task:hover {
+    transform: scale(1.03); /* Slightly enlarge the task box on hover */
+    box-shadow: 0 8px 14px rgba(0, 0, 0, 0.15); /* Slight glow when hovered */
+}
+.stats {
+    text-align: center;
+    padding: 15px;
+    background-color: #eaf6ff;
+    color: #333;
+    font-size: 1rem;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+.quote-of-the-day {
+    text-align: center;
+    padding: 20px;
+    background-color: #fffbe6;
+    color: #555;
+    font-style: italic;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+}
+.feedback {
+    text-align: center;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin: 10px auto;
+    width: 300px; /* Reduced width */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+.feedback h3 {
+    font-size: 1rem; /* Smaller heading */
+    margin-bottom: 5px;
+    color: #333;
+}
+.feedback textarea {
+    width: 90%; /* Match the smaller box width */
+    padding: 6px; /* Reduced padding */
+    border-radius: 4px;
+    margin-top: 5px;
+    resize: none;
+    border: 1px solid #ccc;
+    box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.05);
+}
+.feedback button {
+    margin-top: 8px;
+    padding: 6px 15px; /* Smaller button */
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem; /* Smaller text size */
+    transition: background-color 0.3s;
+}
+.feedback button:hover {
+    background-color: #4a90e2;
+}
+.feedback {
+    text-align: center;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin: 10px auto;
+    width: 300px; /* Reduced width */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+.feedback h3 {
+    font-size: 1rem; /* Smaller heading */
+    margin-bottom: 5px;
+    color: #333;
+}
+.feedback textarea {
+    width: 90%; /* Match the smaller box width */
+    padding: 6px; /* Reduced padding */
+    border-radius: 4px;
+    margin-top: 5px;
+    resize: none;
+    border: 1px solid #ccc;
+    box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.05);
+}
+.feedback button {
+    margin-top: 8px;
+    padding: 6px 15px; /* Smaller button */
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem; /* Smaller text size */
+    transition: background-color 0.3s;
+}
+.feedback button:hover {
+    background-color: #4a90e2;
+}
+/* Navigation Button */
+.nav-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #2a2a72; /* Dark blue */
+    color: white;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.nav-button:hover {
+    background-color: #1e90ff; /* Lighter blue on hover */
+    transform: scale(1.1);
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    position: fixed;
+    top: 80px; /* Slightly below the button */
+    right: 20px;
+    background-color: #2a2a72; /* Same as button color */
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    display: none; /* Initially hidden */
+    z-index: 1000;
+}
+
+.dropdown-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-menu li {
+    margin: 10px 0;
+}
+
+.dropdown-menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.dropdown-menu a:hover {
+    color: #87cefa; /* Light blue on hover */
+}
+
+/* Miscellaneous */
+.hidden {
+    display: none;
+}

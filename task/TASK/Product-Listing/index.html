@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Listing</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Dark Mode Toggle -->
+  <div style="text-align: center; margin-bottom: 1rem;">
+    <button id="themeToggle">Toggle Dark Mode</button>
+  </div>
+
+  <div class="container">
+    <!-- Filters Section -->
+    <aside class="filters">
+      <h2>Filters</h2>
+      <div>
+        <label>Category:</label>
+        <select id="categoryFilter">
+          <option value="all">All</option>
+          <option value="electronics">Electronics</option>
+          <option value="books">Books</option>
+          <option value="clothing">Clothing</option>
+        </select>
+      </div>
+      <div>
+        <label>Min Price:</label>
+        <input type="number" id="minPrice" placeholder="0" />
+        <label>Max Price:</label>
+        <input type="number" id="maxPrice" placeholder="1000" />
+      </div>
+    </aside>
+
+    <!-- Product Listing Content -->
+    <main class="content">
+      <div class="sort">
+        <label>Sort By:</label>
+        <select id="sortOptions">
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="rating-desc">Rating</option>
+          <option value="name-asc">Name (A–Z)</option>
+        </select>
+
+        <input type="text" id="searchInput" placeholder="Search products..." />
+      </div>
+
+      <div id="productList" class="products"></div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

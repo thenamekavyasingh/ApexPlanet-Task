@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="task-manager">
+        <div class="header">
+            <h1 class="animated-heading">Task Management Tool</h1>
+            <p class="motivational-quote">"Small steps, big dreams."</p>
+        </div>
+        <div id="taskForm"></div>
+        <div id="taskBoard"></div>
+    </div>
+    
+    <div class="nav-button" id="navButton">
+        ☰
+    </div>
+    <div class="dropdown-menu" id="dropdownMenu">
+        <ul>
+            <li><a href="#taskForm">Add Task</a></li>
+            <li><a href="#taskBoard">Task Board</a></li>
+            <li><a href="#feedback">Feedback</a></li>
+        </ul>
+    </div>
+    <div class="stats">
+        <p>Total Tasks: <strong id="totalTasks">0</strong></p>
+        <p>Tasks Completed: <strong id="completedTasks">0</strong></p>
+    </div>
+    <div class="quote-of-the-day">
+        <p><strong>Quote of the Day:</strong> <span id="dailyQuote">"Stay productive and focused!"</span></p>
+    </div>
+    <div class="feedback">
+        <h3>Feedback</h3>
+        <textarea placeholder="Your thoughts..." rows="2"></textarea>
+        <button>Submit</button>
+    </div>
+
+    
+    
+    
+    
+    <script src="scripts.js"></script>
+</body>
+</html>

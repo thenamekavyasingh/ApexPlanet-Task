@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CS Fundamentals Quiz</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  
+ <div id="quiz-container">
+  <h1>CS Fundamentals Quiz</h1>
+  <div id="question-box">
+    <p>Loading quiz...</p>
+  </div>
+
+  <div id="quiz-meta">
+    <div id="question-count"></div>
+    <div id="progress-bar"><div id="progress-fill"></div></div>
+  </div>
+
+
+  <div id="final-score" class="score-display"></div>
+
+  <div id="navigation-buttons">
+  <button id="prev-btn" disabled>Previous</button>
+  <button id="next-btn" disabled>Next</button>
+  <button id="submit-btn" style="display:none;" disabled>Submit</button>
+  </div>
+
+  <div id="image-section" style="margin-top: 20px; text-align:center;">
+    <img id="quiz-image" src="" alt="CS Quiz Image" style="max-width:200px; display:none;"/>
+  </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
