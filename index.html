@@ -4,11 +4,31 @@
   <meta charset="UTF-8">
   <title>Kavya's Portfolio</title> 
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="style.min.css" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 </head>
 <body>
 
+<header>
+  <nav class="navbar">
+  <div class="navbar-left">
+    <div class="logo">Kavya's Portfolio</div>
+  </div>
 
+  <div class="navbar-right">
+    <button class="hamburger">&#9776;</button> <!-- hamburger icon -->
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#college">College</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#connect">Connect</a></li>
+    </ul>
+    <button id="darkModeToggle" class="moon-toggle">🌙</button>
+  </div>
+</nav>
+
+</header>
 <div class="card">
   <!-- Main Heading -->
   <h1>Hi, I'm Kavya Singh!! </h1>
@@ -17,25 +37,47 @@
   <p>Welcome to my portfolio! I'm a software enthusiast exploring web development. I love creating beautiful, functional websites and solving real-world problems with code.</p>
 </div>
 
-<div class="card" id="about">
-  <!-- Sub-heading -->
+<div class="card" id="about" data-aos="fade-up">
   <h2>About Me</h2>
-  <p>I’m currently a 3rd year undergrad student at NIT Patna, learning full-stack web development. I enjoy working on creative projects and exploring new technologies.</p>
+  <div class="about-container">
+    <img src="kav.jpg" alt="Kavya Singh" class="profile-pic" loading="lazy">
+    <p>
+      I’m currently a 3rd year undergrad student at NIT Patna, learning full-stack web development. 
+      I enjoy working on creative projects and exploring new technologies.
+    </p>
+  </div>
 </div>
 
-<div class="card" id="college">
+
+<div class="card" id="college" data-aos="zoom-in">
   <h2>Here's My College</h2>
 
   <div class="slideshow-container">
-    <img class="slide" src="MainBuilding.jpg" alt="NIT Patna">
-    <img class="slide" src="images.jpg" alt="Campus View 1">
-    <img class="slide" src="NIT_Patna_campus.jpg" alt="College Event">
+    <img class="slide" src="MainBuilding.jpg" alt="NIT Patna" loading="lazy">
+    <img class="slide" src="images.jpg" alt="Campus View 1" loading="lazy">
+    <img class="slide" src="NIT_Patna_campus.jpg" alt="College Event" loading="lazy">
   </div>
 
   <p>I am currently pursuing my B.Tech from the National Institute of Technology, Patna (NIT Patna)...</p>
 </div>
 
-<div class="card" id="projects">
+<div class="card" id="education" data-aos="fade-right">
+  <h2>Education</h2>
+  <div class="education-entry">
+    <h3>B.Tech - NIT Patna</h3>
+    <p>CGPA: 8.06 (till 5th semester)</p>
+  </div>
+  <div class="education-entry">
+    <h3>Class 12th - CBSE Board</h3>
+    <p>Percentage: 91 %</p>
+  </div>
+  <div class="education-entry">
+    <h3>Class 10th - CBSE Board</h3>
+    <p>Percentage: 96.6 %</p>
+  </div>
+</div>
+
+<div class="card" id="projects" data-aos="fade-left">
   <h2>Projects</h2>
 
   <div class="project">
@@ -61,7 +103,7 @@
 </div>
 
 
-<div class="card" id="connect">
+<div class="card" id="connect" data-aos="fade-up">
   <!-- Links -->
   <h2>Connect With Me</h2>
   <ul>
@@ -71,7 +113,15 @@
   </ul>
 
     <button id="alertBtn">Click Me!</button>
-    <script src="script.js"></script>
+    <script src="script.min.js"></script>
 </div>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true,
+  });
+</script>
+
 </body>
 </html>
